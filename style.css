@@ -1,0 +1,256 @@
+/* VARIABLES */
+:root {
+  --main: #ec4899;
+  --gradient: linear-gradient(135deg, #ec4899, #a855f7);
+  --dark: #1e1b2e;
+  --card: #2a2438;
+  --text: #f9fafb;
+  --light: #3b3355;
+}
+/* BODY */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Georgia", serif;
+
+  /* --- ARRIÈRE-PLAN TOTALEMENT BLANC --- */
+  background-color: #ffffff; 
+  border: none;              
+  padding: 20px;             
+}
+
+/* --- IMPORTANT POUR LE HAUT DE LA CARTE --- */
+.carte {
+  width: 420px;
+  background: var(--card);
+  border-radius: 20px;
+  overflow: hidden;  
+  color: var(--text);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding-bottom: 10px;
+}
+/* CARTE */
+.carte {
+  width: 420px;  
+  background: var(--card);
+  border-radius: 20px;
+  overflow: hidden;
+  color: var(--text);
+  box-shadow: 0 20px 60px rgba(236, 72, 153, 0.3);
+  padding-bottom: 10px;
+}
+@media (max-width: 500px) {
+  .carte {
+    width: 90%;
+  }
+}
+/* HEADER */
+.carte__header {
+  height: 60px;
+  background: var(--gradient);
+  position: relative;
+  overflow: visible;
+  border-radius: 20px 20px 0 0;
+}
+.carte__header::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  height: 40px;
+  background: var(--card);
+  border-radius: 40px 40px 0 0;
+}
+/* AVATAR */
+.avatar {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f9a8d4, #c084fc);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 22px;
+  color: white;
+  border: 4px solid var(--card);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  z-index: 10;
+}
+.avatar__badge {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 12px;
+  height: 12px;
+  background: #22c55e;
+  border-radius: 50%;
+  border: 2px solid var(--card);
+}
+/* IDENTITÉ */
+.carte__identite {
+  text-align: center;
+  margin-top: 45px;
+  padding: 5px;
+}
+.nom {
+  margin: 10px 0;
+}
+.titre {
+  font-size: 13px;
+  color: #fbcfe8;
+}
+/* TAGS */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 0;
+  margin: 10px 0;
+  list-style: none;
+}
+/* TAGS */
+/* TAGS */
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #ec4899, #a855f7); /* �� même gradient que la carte */
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  color: white;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.3px;
+}
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  text-align: center;
+  font-size: 13px;
+}
+/* LABEL STATS */
+.stat-label {
+  font-size: 11px;
+  font-weight: normal;
+  color: #cbd5e1;
+  opacity: 0.9;
+}
+/* �� CHIFFRES EN SERIF */
+strong,
+.skill-content strong {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-weight: 600;
+}
+/* BIO */
+.bio {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #ddd;
+  margin-top: 20px; /* �� fait descendre le texte */
+}
+/* COMPÉTENCES */
+.competences {
+  padding: 20px;
+  text-align: center;
+  color: #f8b4d9; /* �� rose */
+}
+/* GRILLE CERCLES */
+.skills-circles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+/* CERCLE SKILL */
+.skill {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+}
+/* SVG */
+.skill svg {
+  width: 80px;
+  height: 80px;
+  transform: rotate(-90deg);
+}
+.skill circle {
+  fill: none;
+  stroke-width: 8;
+  stroke: #3b3355;
+}
+/* PROGRESSION */
+.skill circle:nth-child(2) {
+  stroke: #ec4899;
+  stroke-linecap: round;
+  stroke-dasharray: 226;
+  stroke-dashoffset: calc(226 - (226 * var(--percent)) / 100);
+}
+/* TEXTE CENTRE */
+.skill-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: white;
+  text-align: center;
+}
+/* FOOTER */
+.liens {
+  text-align: center;
+  padding: 10px;
+}
+.liens a {
+  text-decoration: none;
+  color: white;
+  background: var(--light);
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 15px;
+  display: inline-block;
+}
+.liens a:last-child {
+  background: linear-gradient(135deg, #a855f7, #ec4899); /* ��➡️�� violet vers rose */
+  color: white;
+}
+.contact {
+  display: block;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #22c55e, #06b6d4); /* �� bleu-vert distinct */
+  color: white;
+}
+.liens a:hover {
+  background: var(--main);
+}
+/* QR CODE EN BAS DE LA CARTE */
+.qr {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 10px;
+}
+.qr img {
+  width: 90px;   /* �� agrandi */
+  height: 90px;
+  background: white;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
